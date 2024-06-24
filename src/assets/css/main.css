@@ -1,0 +1,19 @@
+
+@import './base/base.css';
+@import './base/utility.css';
+@import './base/reset.css';
+@import './fonts/fonts.css';
+@import './colors/colors.css';
+
+body {
+    height: 100vh;
+    padding: 10px;
+}
+
+#app {
+    width: min(100%, 450px);
+    height: 100%;
+    margin: 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+}

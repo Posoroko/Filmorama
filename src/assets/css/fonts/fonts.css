@@ -1,28 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
-@import './base.css';
-
-body {
-    height: 100vh;
-    background-color: #252527;
-    padding: 10px;
-}
-
-#app {
-    width: min(100%, 450px);
-    height: 100%;
-    background-color: white;
-    margin: 0 auto;
-    border-radius: 10px;
-    overflow: hidden;
-}
 html {
     font-family: "Caveat", cursive;
-    
 }
+
 .pencil {
     font-family: "Shadows Into Light", cursive;
 }
-.caveat  {
+
+.caveat {
     font-family: "Shadows Into Light", cursive;
 }

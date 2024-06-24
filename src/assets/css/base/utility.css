@@ -93,7 +93,6 @@
 .objectFitContained {width: 100%; height: 100%; object-fit: contain;}
 .objectFitContain {width: 100%;height: 100%;object-fit: contain;}
 
-
 .marTop5 {margin-top: min(5px, 0.5vw);}
 .marTop10 {margin-top: min(10px, 1vw);}
 .marTop20 {margin-top: min(20px,0.9vw);}
@@ -108,10 +107,7 @@
 .pad15 {padding: 15px;}
 .pad20 {padding: 20px;}
 
-
-
 /* text and fonts */
-
 .textAlignRight {text-align: right;}
 .textAlignCenter {text-align: center;}
 
@@ -120,8 +116,6 @@
 .uppercase {text-transform: uppercase;}
 .lowercase {text-transform: lowercase;}
 .capitalize {text-transform: capitalize;}
-
-
 
 .weight1 {font-weight: 100;}
 .weight2 {font-weight: 200;}
