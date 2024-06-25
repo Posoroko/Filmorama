@@ -14,6 +14,7 @@ import ContentGrid from '@/components/ContentGrid.vue'
             <p class="">
                 jdklsjqdl jkldfjls joigpo jfdjsl  k fdks kf dksmflkdlksml fkdmls kfdsk mfdksm fkdmls kfld skfdml
             </p>
+
             <router-link to="/movies">
                 ma liste de film
             </router-link>

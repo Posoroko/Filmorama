@@ -1,18 +1,25 @@
 <script setup>
 import { onMounted } from 'vue';
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterView } from 'vue-router'
 import Paper from './components/Paper.vue'
-import ModalMain from '@/components/modals/ModalMain.vue'
+import overlaymain from '@/components/overlay/overlay-main.vue'
 
 import { useAppState } from '@/stores/appState';
 const appState = useAppState();
 
 onMounted(() => {
-    appState.dbExists = localStorage.getItem('dbExists') === 'true'
 
+    appState.dbExists = localStorage.getItem('dbExists') === 'true'
+    
     if(!appState.dbExists) {
+        
         appState.isModalOpen = true
         appState.modalTitle = 'welcome'
+    } 
+    else {
+        
+        appState.isModalOpen = true
+        appState.modalTitle = 'add-movie'
     }
 })
 </script>
@@ -22,13 +29,11 @@ onMounted(() => {
         <RouterView />
     </Paper>
 
-    <ModalMain>
-        <p>jdkslq</p>
-    </ModalMain>
+    <overlaymain>
+
+    </overlaymain>
 </template>
 
 <style scoped>
-.highlighted {
-    background-color: yellow;
-}
+
 </style>

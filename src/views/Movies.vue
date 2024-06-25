@@ -1,4 +1,8 @@
 <script setup>
+
+</script>
+
+<script setup>
 import titleOnly from '@/components/MovieCards/title-Only.vue'
 
 const movies = [
@@ -34,6 +38,10 @@ const movies = [
 
 <template>
     <h1>Mes films</h1>
+
+    <ul>
+        <Title-Only />
+    </ul>
 
     <router-link to="/">
         homepage
