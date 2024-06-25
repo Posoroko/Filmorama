@@ -18,3 +18,14 @@ body {
     overflow: hidden;
     position: relative;
 }
+
+:root {
+    --line-height: 40px;
+    --header-height: 80px;
+}
+.headerHeight {
+height: var(--header-height);
+}
+.lineHeight {
+    height: var(--line-height);
+}

@@ -31,6 +31,7 @@
 
 div.full {
     overflow: hidden;
+    
 }
 .headerBox {
     height: 80px;
@@ -52,5 +53,6 @@ div.full {
     left: 0;
     right: 0;
     bottom: 0;
+    padding: 0 20px 0 35px;
 }
 </style>
