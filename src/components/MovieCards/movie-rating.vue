@@ -15,7 +15,11 @@ const colors = [
 </script>
 
 <template>
-    <div class="box lineHeight">
+    <div class="box lineHeight flex alignCenter">
         <ratingstar v-for="i in 5" :key="i" :active="i <= rating" :color="colors[rating]" />
     </div>
 </template>
+
+<style scoped>
+
+</style>
