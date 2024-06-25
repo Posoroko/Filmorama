@@ -1,18 +1,28 @@
 <script setup>
-import { useAppState } from '@/stores/appState';
-import Welcome from '@/components/modals/Welcome.vue';
+import { useAppState } from '@/stores/appState'
+import Welcome from '@/components/modals/Welcome.vue'
+import addmovie from '@/components/modals/add-movie.vue'
+// import { closeModal } from '@/utils/tools'
 const appState = useAppState();
+
+function closeModal(e) {
+    if(e.target === e.currentTarget) {
+        appState.isModalOpen = false
+        appState.modalTitle = ''
+    }
+    
+}
 
 </script>
 
 <template>
-    <div class="backdrop centered" v-if="appState.isModalOpen">
-        <div class="modal">
-                           
+    <div v-if="appState.isModalOpen" class="backdrop centered" @click="closeModal">
+        <div class="modal flex column">
 
-            <div class="content">
-                <Welcome v-if="appState.modalTitle === 'welcome'" />
-            </div>
+            <Welcome v-if="appState.modalTitle === 'welcome'" />
+
+            <addmovie v-if="appState.modalTitle === 'add-movie'" />
+
         </div>
     </div>
 </template>
@@ -29,8 +39,9 @@ const appState = useAppState();
 }
 .modal {
     width: 100%;
-    min-height: 400px;
+    height: 400px;
     background-color: white;
     padding: 15px;
+    overflow: hidden;
 }
 </style>

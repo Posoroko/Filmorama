@@ -12,7 +12,7 @@ async function handleClick() {
         appState.modalTitle = ''
         
         localStorage.setItem('dbExists', 'true');
-        appState.dbExists = true
+        // appState.dbExists = true
         location.reload();
     }
 }
@@ -21,22 +21,25 @@ async function handleClick() {
 </script>
 
 <template>
-    <Title title="Bienvenue !" />
+    <div class="grow">
+        <Title title="Bienvenue !" />
+        {{ appState.modalTitle }}
 
-    <p>
-        Bienvenue sur Filmification !
-        Vous pouvez garder un journal de tous les films et séries
-        que vous avez aimé et détesté.
+        <p>
+            Bienvenue sur Filmification !
+            Vous pouvez garder un journal de tous les films et séries
+            que vous avez aimé et détesté.
 
-        Filmification utilise votre stockage local pour garder vos données. Si vous désinstallé
-        votre navigateur ou supprimez ses données, votre liste de film sera supprimé
-        aussi.
+            Filmification utilise votre stockage local pour garder vos données. Si vous désinstallé
+            votre navigateur ou supprimez ses données, votre liste de film sera supprimé
+            aussi.
 
-        <button @click="handleClick">
-            initialiser la base de données
-        </button>
+            <button @click="handleClick">
+                initialiser la base de données
+            </button>
 
-    </p>
+        </p>
+    </div>
 </template>
 
 <style scoped>
