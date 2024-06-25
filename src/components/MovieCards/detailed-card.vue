@@ -10,7 +10,7 @@ defineProps({
 <template>
     <li v-if="movie" class="pencil w100">
         <a class="flex block w100">
-            <img :src="movie.poster" alt="">
+            <img src="@/assets/images/kung-fu-panda.jpg" alt="">
 
             <div class="content w100">
                 <div class="flex w100">
