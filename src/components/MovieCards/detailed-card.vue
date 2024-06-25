@@ -15,7 +15,9 @@ defineProps({
             <div class="content w100">
                 <div class="flex w100">
                     <div class="icon centered">
-                        <img :src="`src/assets/images/${movie.type == 'tv' ? 'tv' : 'clap'}.jpg`" alt="">
+                        <img v-if="movie.type === 'tv'" src="@/assets/images/tv.jpg" alt="">
+
+                        <img v-else src="@/assets/images/clap.jpg" alt="">
                     </div>
 
                     <div class="info grow relative">
