@@ -21,5 +21,8 @@ const colors = [
 </template>
 
 <style scoped>
-
+div {
+    border: 2px solid black;
+    padding: 0 5px;
+}
 </style>

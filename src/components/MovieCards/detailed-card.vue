@@ -14,8 +14,8 @@ defineProps({
 
             <div class="content w100">
                 <div class="flex w100">
-                    <div class="icon centered pad5">
-                        {{ movie.type }}
+                    <div class="icon centered">
+                        <img :src="`src/assets/images/${movie.type == 'tv' ? 'tv' : 'clap'}.jpg`" alt="">
                     </div>
 
                     <div class="info grow relative">
@@ -64,6 +64,19 @@ img {
 }
 .info {
     height: calc(var(--line-height) * 2);
+    
+}
+.icon {
+    height: calc(var(--line-height) * 2);
+    padding: 0 5px;
+    border: 2px solid black;
+}
+.icon img {
+    display: block;
+    height: 30px;
+    padding: 0;
+    margin: 0;
+    mix-blend-mode: multiply;
 }
 .comment {
     font-size: 24px;
@@ -72,6 +85,7 @@ img {
     padding-top: 10px;
     padding-left: 10px;
     line-height: 40px;
+    border-top: 2px solid black;
 }
 
 </style>
