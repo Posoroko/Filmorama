@@ -1,58 +1,18 @@
 <script setup>
+import { ref, onMounted } from 'vue';
 import titleonly from '@/components/MovieCards/title-only.vue'
 import detailedcard from '@/components/MovieCards/detailed-card.vue'
+import { getAllMovies } from '@/idb/movies.js'
+import { useRoute } from 'vue-router'
 
-const movies = [
+const route = useRoute()
 
-    {
-       id: 1,
-       title: "Kung Fu Panda",
-       year: 2008,
-       type: "movie",
-       rating: 1,
-       comment: "Excellent film d'animation, j'aime ce film ! C'est super ! Je recommande !  hfjdk hsfkjh skj hfdkjs hfdkjhsfkj dhs fhdkj lshfkj dhsfklj",
-       poster: "src/assets/images/kung-fu-panda.jpg"
-    },
-    {
-       id: 2,
-       title: "Star Wars 2: The Clone Wars",
-       year: 1999,
-        type: "movie",
-       rating: 2,
-       comment: "Un film qui a marqué mon enfance",
-       poster: "src/assets/images/star-wars-2.jpg"
+const movies = ref(null)
+ 
+onMounted(async () => {
+    movies.value = await getAllMovies()
 
-    },
-    {
-       id: 3,
-       title: "Star Wars 2: The Clone Wars",
-       year: 1999,
-        type: "movie",
-       rating: 3,
-       comment: "Un film qui a marqué mon enfance",
-       poster: "src/assets/images/star-wars-2.jpg"
-
-    },
-    {
-        id: 4,
-        title: "Star Wars 2: The Clone Wars",
-        year: 1999,
-        type: "tv",
-        rating: 4,
-        comment: "Un film qui a marqué mon enfance",
-        poster: "src/assets/images/star-wars-2.jpg"
-
-    },
-    {
-        id: 5,
-        title: "Star Wars 2: The Clone Wars",
-        year: 1999,
-        rating: 5,
-        comment: "Un film qui a marqué mon enfance",
-        poster: "src/assets/images/star-wars-2.jpg"
-
-    }
-]
+})
 </script>
 
 <template>
@@ -60,17 +20,15 @@ const movies = [
         Mes films
     </h1>
 
-
-
-    <ul class="">
+    <ul class="" v-if="movies && movies.length">
         <!-- <titleonly v-for="movie in movies" :key="movie.id" :title="movie.title" :rating="movie.rating" /> -->
-        <detailedcard v-for="movie in movies" :key="movie.id" :movie="movie"/>
+        <detailedcard v-for="movie in movies" :key="movie.imdbID" :movie="movie"/>
     </ul>
 
-    <router-link to="/">
-        homepage
-    </router-link>
-
+    <p v-else>
+        Vous n'avez pas encore ajouté de film dans votre liste.  Ajoutez-en un
+        en cliquant sur le bouton "ajouter un film".
+    </p>
 </template>
 
 <style scoped>

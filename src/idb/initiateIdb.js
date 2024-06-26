@@ -10,7 +10,7 @@ async function initiateIdb() {
     const db = await openDB('filmification', 1, {
         upgrade(db) {
             if (!db.objectStoreNames.contains('movies')) {                
-                db.createObjectStore('movies', { keyPath: 'id' });
+                db.createObjectStore('movies', { keyPath: 'imdbID' });
                 db.createObjectStore('state');
                 dbCreated = true;
             }
@@ -49,6 +49,7 @@ async function deleteDatabaseByName(name) {
     DBDeleteRequest.onsuccess = (event) => {
         // localStorage.removeItem('dbExists');
         location.reload();
+        console.log("reloaded");
         console.log("Base de données supprimée !");
 
         console.log(event.result); // should be undefined

@@ -4,6 +4,8 @@ import ratingstar from '@/components/MovieCards/rating-star.vue'
 defineProps({
     rating: Number
 })
+defineEmits(['rating'])
+
 const colors = [
     undefined,
     '#008729',
@@ -16,13 +18,18 @@ const colors = [
 
 <template>
     <div class="box lineHeight flex alignCenter">
-        <ratingstar v-for="i in 5" :key="i" :active="i <= rating" :color="colors[rating]" />
+        <ratingstar 
+            v-for="i in 5" :key="i" 
+            :active="i <= rating" 
+            :color="colors[rating]" 
+            @click="$emit('rating', i)"
+        />
     </div>
 </template>
 
 <style scoped>
 div {
-    border: 2px solid black;
+    border: 2px solid var(--stroke-color);
     padding: 0 5px;
 }
 </style>

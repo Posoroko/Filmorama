@@ -3,10 +3,6 @@
 
 <template>
   <main class="full flex">
-    <div class="margin relative">
-
-    </div>
-
     <div class="page grow flex column">
         <div class="header w100 ">
             <slot name="header">
@@ -30,9 +26,9 @@
 .header {
     height: 80px;
 }
-.content {
+/* .content {
     padding-left: 20px;
-}
+} */
 .margin {
     flex-shrink: 0;
 }

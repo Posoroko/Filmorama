@@ -5,3 +5,11 @@ body {
 #app {
     background-color: white;
 }
+
+:root {
+    --stroke-color: rgba(4, 30, 39, 0.614);
+
+    --danger: rgb(218, 162, 162);
+    --success: rgb(170, 205, 170);
+    --warning: rgb(205, 188, 150);
+}

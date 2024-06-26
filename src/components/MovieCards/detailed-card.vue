@@ -1,5 +1,6 @@
 <script setup>
 import movierating from '@/components/MovieCards/movie-rating.vue'
+import movieposter from '@/components/MovieCards/movie-poster.vue'
 
 defineProps({
     movie: Object
@@ -9,13 +10,15 @@ defineProps({
 
 <template>
     <li v-if="movie" class="pencil w100">
-        <a class="flex block w100">
-            <img src="@/assets/images/kung-fu-panda.jpg" alt="">
+        <a :href="`/movies/${movie.imdbID}`" class="flex block w100">
+            <div class="posterFrame">
+                <movieposter :src="movie.Poster" />
+            </div>
 
             <div class="content w100">
                 <div class="flex w100">
                     <div class="icon centered">
-                        <img v-if="movie.type === 'tv'" src="@/assets/images/tv.jpg" alt="">
+                        <img v-if="movie.Type === 'series'" src="@/assets/images/tv.jpg" alt="">
 
                         <img v-else src="@/assets/images/clap.jpg" alt="">
                     </div>
@@ -23,21 +26,21 @@ defineProps({
                     <div class="info grow relative">
                         <div class="absolute w100">
                             <p class="title lineHeight w100">
-                                {{ movie.title }}
+                                {{ movie.Title }}
                             </p>
 
                             <div class="flex">
-                                <movierating class="sitOnline" :rating="movie.rating" />
+                                <movierating class="sitOnline" :rating="movie.Rating" />
 
                                 <p class="year sitOnline flex alignCenter">
-                                    {{ movie.year }}
+                                    {{ movie.Year }}
                                 </p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <p class="comment">
-                    {{ movie.comment.slice(0, 65) }} ...
+                    {{ movie.Comment.slice(0, 30) }} ...
                 </p>
             </div>
         </a>
@@ -52,9 +55,11 @@ li {
 li:first-child {
     margin-top: 0;
 }
-img {
-    display: block;
+.posterFrame {
+    width: 40%;
     height: calc(var(--line-height) * 4);
+    background-color: #002025df;
+    border: 2px solid #002025df;
 }
 .title {
     font-size: 30px;
@@ -87,7 +92,8 @@ img {
     padding-top: 10px;
     padding-left: 10px;
     line-height: 40px;
-    border-top: 2px solid black;
+    border: 2px solid black;
+    border-bottom: 2px solid black;
 }
 
 </style>

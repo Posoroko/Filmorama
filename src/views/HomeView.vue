@@ -1,23 +1,37 @@
 <script setup>
+import { ref, onMounted } from 'vue'
 import ContentGrid from '@/components/ContentGrid.vue'
+import detailedcard from  '@/components/MovieCards/detailed-card.vue'
+import { getAllMovies } from '@/idb/movies.js'
+
+const movie = ref(null)
+
+onMounted(async () => {
+    const movies = await getAllMovies()
+
+    
+    movie.value = movies[0];
+    console.log(movie.value)
+})
 </script>
 
 <template>
     <ContentGrid>
         <template #header>
             <p class="note absolute">
-                accueil
+ 
             </p>
         </template>
 
         <template #content>
-            <p class="">
-                jdklsjqdl jkldfjls joigpo jfdjsl  k fdks kf dksmflkdlksml fkdmls kfdsk mfdksm fkdmls kfld skfdml
+            <p>
+                Filmification, votre journal des films que vous avez aimé et détesté
             </p>
 
-            <router-link to="/movies">
-                ma liste de film
-            </router-link>
+            <div class="w100 latestBox" v-if="movie">
+                <h1 class="pencil">Dernier film ajouté : </h1>
+                <detailedcard :movie="movie" />
+            </div>
         </template>
     </ContentGrid>
 </template>
@@ -27,12 +41,16 @@ import ContentGrid from '@/components/ContentGrid.vue'
     top: 10px;
     right: 30px;
     rotate: 10deg;
+    padding-top: 8px;
 }
 p {
     font-size: 26px;
     letter-spacing: 1.5px;
     line-height: 40px;
-    padding-top: 8px;
+    
     font-weight: 700;
+}
+.latestBox {
+    margin-top: calc(var(--line-height) * 4);
 }
 </style>

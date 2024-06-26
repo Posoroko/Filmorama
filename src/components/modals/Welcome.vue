@@ -14,6 +14,7 @@ async function handleClick() {
         localStorage.setItem('dbExists', 'true');
         // appState.dbExists = true
         location.reload();
+        console.log("reloaded")
     }
 }
 

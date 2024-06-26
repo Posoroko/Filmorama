@@ -3,26 +3,28 @@
 
 <template>
     <div class="full flex column relative">
-        <div class="headerBox  flex">
-            <img class="h100" src="@/assets/images/page/corner.jpg" alt="">
+        <div class="absoluteFull">
+            <div class="headerBox flex w100">
+                <img class="h100" src="@/assets/images/page/corner.jpg" alt="">
 
-            <img class="h100" src="@/assets/images/page/header.jpg" alt="">
-        </div>
-
-        <div class="pageBox grow flex w100">
-            <div class="marginBox">
-                <img class="fiveLinesHeight" src="@/assets/images/page/margin.jpg" alt="">
+                <img class="h100" src="@/assets/images/page/header.jpg" alt="">
             </div>
 
-            <div class="pageBox ">
-                <img class="fiveLinesHeight" src="@/assets/images/page/page.jpg" alt="">
+            <div class="contentBox relative">
+                <slot>
+
+                </slot>
+
+                <div class="pageContainer absolute flex">
+                    <div class="marginBox">
+                        <img class="fiveLinesHeight" src="@/assets/images/page/margin.jpg" alt="">
+                    </div>
+
+                    <div class="pageBox ">
+                        <img class="fiveLinesHeight" src="@/assets/images/page/page.jpg" alt="">
+                    </div>
+                </div>
             </div>
-        </div>
-
-        <div class="contentBox absolute">
-            <slot>
-
-            </slot>
         </div>
     </div>
 </template>
@@ -30,8 +32,7 @@
 <style scoped>
 
 div.full {
-    overflow: hidden;
-    
+    overflow: scroll;
 }
 .headerBox {
     height: 80px;
@@ -39,6 +40,13 @@ div.full {
 .marginBox {
     background-image: url('@/assets/images/page/margin.jpg');
     background-size: auto 200px;
+}
+.pageContainer {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
 }
 .pageBox {
     background-image: url('@/assets/images/page/page.jpg');
@@ -49,9 +57,9 @@ div.full {
 }
 
 .contentBox {
-    top: 0;
-    left: 0;
     width: 100%;
-    padding: 0 20px 0 35px;
+    min-height: 100%;
+    padding: 0 20px 100px 35px;
+    isolation: isolate;
 }
 </style>

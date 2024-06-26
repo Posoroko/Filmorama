@@ -39,7 +39,7 @@ function closeModal(e) {
 }
 .modal {
     width: 100%;
-    height: 400px;
+    min-height: 400px;
     background-color: white;
     padding: 15px;
     overflow: hidden;

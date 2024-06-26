@@ -16,11 +16,6 @@ onMounted(() => {
         appState.isModalOpen = true
         appState.modalTitle = 'welcome'
     } 
-    else {
-        
-        appState.isModalOpen = true
-        appState.modalTitle = 'add-movie'
-    }
 })
 </script>
 
