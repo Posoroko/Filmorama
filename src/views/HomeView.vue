@@ -3,15 +3,18 @@ import { ref, onMounted } from 'vue'
 import ContentGrid from '@/components/ContentGrid.vue'
 import detailedcard from  '@/components/MovieCards/detailed-card.vue'
 import { getAllMovies } from '@/idb/movies.js'
+import { useAppState } from '@/stores/appState'
+
+const appState = useAppState();
 
 const movie = ref(null)
 
 onMounted(async () => {
-    const movies = await getAllMovies()
-
+    if(localStorage.getItem('dbExists')) {
+        const movies = await getAllMovies()
+        movie.value = movies[0];
+    }
     
-    movie.value = movies[0];
-    console.log(movie.value)
 })
 </script>
 
@@ -19,7 +22,7 @@ onMounted(async () => {
     <ContentGrid>
         <template #header>
             <p class="note absolute">
- 
+
             </p>
         </template>
 

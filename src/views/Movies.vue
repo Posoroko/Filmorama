@@ -10,7 +10,10 @@ const route = useRoute()
 const movies = ref(null)
  
 onMounted(async () => {
-    movies.value = await getAllMovies()
+    if(localStorage.getItem('dbExists')) {
+        console.log('hello')
+        movies.value = await getAllMovies()
+    }
 
 })
 </script>

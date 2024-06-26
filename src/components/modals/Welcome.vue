@@ -8,13 +8,12 @@ async function handleClick() {
     const result = await initiateIdb();
 
     if(result.dbCreated) {
+        console.log("Base de données creée !")
         appState.isModalOpen = false
         appState.modalTitle = ''
         
         localStorage.setItem('dbExists', 'true');
-        // appState.dbExists = true
         location.reload();
-        console.log("reloaded")
     }
 }
 

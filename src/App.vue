@@ -11,7 +11,7 @@ onMounted(() => {
 
     appState.dbExists = localStorage.getItem('dbExists') === 'true'
     
-    if(!appState.dbExists) {
+    if(!localStorage.getItem('dbExists')) {
         
         appState.isModalOpen = true
         appState.modalTitle = 'welcome'
