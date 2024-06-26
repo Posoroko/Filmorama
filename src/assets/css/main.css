@@ -6,6 +6,8 @@
 @import './colors/colors.css';
 
 body {
+    height: 100svh;
+    height: 100dvh;
     height: 100vh;
     padding: 10px;
     overflow: scroll;
