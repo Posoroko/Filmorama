@@ -4,7 +4,7 @@ import Movies from '@/views/Movies.vue'
 import MovieId from '@/views/MovieId.vue'
 
 const router = createRouter({
-    history: createWebHistory("https://filmification.netlify.app/"),
+    history: createWebHistory(),
     routes: [
         {
             path: '/',
