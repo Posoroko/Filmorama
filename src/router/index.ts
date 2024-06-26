@@ -4,8 +4,7 @@ import Movies from '@/views/Movies.vue'
 import MovieId from '@/views/MovieId.vue'
 
 const router = createRouter({
-    history: createWebHistory(import.meta.env.BASE_URL),  
-    base: import.meta.env.BASE_URL,
+    history: createWebHistory(),
     routes: [
         {
             path: '/',
