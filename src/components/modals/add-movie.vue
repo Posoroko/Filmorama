@@ -14,7 +14,7 @@ const appState = useAppState();
 const title = ref('');
 const results = ref([]);
 
-const url = "http://omdbapi.com/?apikey=84f68ae&s="
+const url = "https://omdbapi.com/?apikey=84f68ae&s="
 
 async function search() {
     console.log(`${url}${title.value}`)
