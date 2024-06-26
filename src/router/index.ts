@@ -5,7 +5,7 @@ import MovieId from '@/views/MovieId.vue'
 
 const router = createRouter({
     // history: createWebHistory(import.meta.env.BASE_URL),  
-    history: createWebHistory("https://filmorama.netlify.app"),  
+    history: createWebHistory("https://filmorama.netlify.app/"),  
     routes: [
         {
             path: '/',
